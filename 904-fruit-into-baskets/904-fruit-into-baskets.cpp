@@ -6,7 +6,7 @@ public:
         for(int j = 0;j < fruits.size();j++){
             m[fruits[j]]++;
             
-            if(m.size() > 2){
+            while(m.size() > 2){
                 if(m[fruits[i]] == 1){
                     m.erase(fruits[i]);
                 }else{
