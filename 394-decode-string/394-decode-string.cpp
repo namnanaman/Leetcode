@@ -1,6 +1,6 @@
 class Solution {
 public:
-    string f(const string &s,int &i){
+    string f( string s,int &i){
         string res ;
         
         
