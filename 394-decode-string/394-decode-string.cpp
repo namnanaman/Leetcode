@@ -1,37 +1,29 @@
 class Solution {
 public:
-    string f( string s,int &i){
-        string res ;
-        
-        
-        while(i < s.size() && s[i] != ']'){
-            if(!isdigit(s[i])){
-                res += s[i++];
-            }else{
-                int n = 0;
-                
-                while(i < s.size() && isdigit(s[i])){
-                    n = n * 10 + s[i++] - '0';
-                    
-                }
-                i++;
-                string t = f(s,i);
-                i++;
-                
-                while(n-- > 0){
-                    res += t;
-                } 
-                
-            }
-            
-            
-        }
-        return res;
-        
-    }
     string decodeString(string s) {
-        int i = 0;
-        
-        return f(s,i);      
+        int pos = 0;
+        return helper(pos, s);
+    }
+    
+    string helper(int& pos, string s) {
+        int num=0;
+        string word = "";
+        for(;pos<s.size(); pos++) {
+            char cur = s[pos];
+            if(cur == '[') {
+                string curStr = helper(++pos, s);
+                while(num != 0) {
+                    word += curStr;
+                    num--;
+                }
+            } else if (cur >= '0' && cur <='9') {
+                num = num*10 + cur - '0';
+            } else if (cur == ']') {
+                return word;
+            } else {    // Normal characters
+                word += cur;
+            }
+        }
+        return word;
     }
 };
