@@ -6,23 +6,24 @@ public:
     }
     
     string helper(int& pos, string s) {
-        int num=0;
+        int num = 0;
         string word = "";
-        for(;pos<s.size(); pos++) {
-            char cur = s[pos];
-            if(cur == '[') {
-                string curStr = helper(++pos, s);
-                while(num != 0) {
-                    word += curStr;
-                    num--;
-                }
-            } else if (cur >= '0' && cur <='9') {
-                num = num*10 + cur - '0';
-            } else if (cur == ']') {
-                return word;
-            } else {    // Normal characters
-                word += cur;
+        
+        for(;pos<s.size();pos++){
+            int curr = s[pos];
+            if(curr == '['){
+                string currWord = helper(++pos,s);
+                for(;num > 0; num--) word += currWord;
+            }else if(curr >= '0' && curr <= '9'){
+                num = num*10 + curr - '0';
             }
+            else if(curr == ']'){
+                return word;
+            }
+            else{
+                word += curr;
+            }
+            
         }
         return word;
     }
