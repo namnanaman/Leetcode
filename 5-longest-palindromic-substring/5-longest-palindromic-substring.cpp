@@ -9,7 +9,7 @@ public:
         for(int i = 0 ; i < n;i++ ) {
             dp[i][i] = true;
             count = max(count,1);
-            ans = s.substr(i,i+1);
+            ans = s.substr(i,1);
         } 
         
         for(int i = 0; i < n-1;i++ ){
