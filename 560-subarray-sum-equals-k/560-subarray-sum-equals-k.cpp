@@ -8,11 +8,10 @@ public:
         
         int sum = 0;
         
-        
+        PrevSum[0]++;
         for(int i = 0;i<n;i++){
             sum += nums[i];
             
-            if(sum == k) count+=1;
             
             if(PrevSum.find(sum-k) != PrevSum.end()){
                 count += PrevSum[sum-k];
