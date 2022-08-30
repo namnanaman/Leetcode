@@ -78,8 +78,8 @@ public:
         if(n < 4) return ans;
         if(nums.empty()) return ans;
         sort(nums.begin(),nums.end());
-        for(int i =0;i<n;i++){
-            for(int j = i+1;j<n;j++){
+        for(int i =0;i<n-3;i++){
+            for(int j = i+1;j<n-2;j++){
                 long long target2 = (long long)target -(long long)nums[i]- (long long)nums[j];
                 int front = j+1;
                 int back = n-1;
