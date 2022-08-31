@@ -100,10 +100,10 @@ public:
                         while(front < back && nums[back] == y) back--;
                     }
                 }
-                while(j +1 <n && nums[j+1] == nums[j]) j++;
+                while(j +1 <n-2 && nums[j+1] == nums[j]) j++;
                 
             }
-            while(i+1 < n && nums[i+1] == nums[i]) i++;
+            while(i+1 < n-3 && nums[i+1] == nums[i]) i++;
         }
         
         
