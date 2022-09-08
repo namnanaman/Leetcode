@@ -17,9 +17,7 @@ public:
     bool canEatInTime(vector<int>& piles, int k, int h){
         long long hours = 0;
         for(long long pile : piles){
-            long long  div = pile / k;
-            hours += div;
-            if(pile % k != 0) hours++;
+            hours += (pile+k-1) / k;  
         }
         return hours <= h;
     
