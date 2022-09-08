@@ -5,7 +5,7 @@ public:
         int m = mat[0].size();
         int low = 0;
         int high = m-1;
-        
+        vector<vector<int>> ans;
         while(low <= high){
             int mid = low +(high - low)/2;
             
@@ -18,11 +18,12 @@ public:
             }
             
             if((mid == 0 || mat[maxRow][mid] > mat[maxRow][mid -1 ]) && (mid == m-1 || mat[maxRow][mid] > mat[maxRow][mid+1] )){
-                return {maxRow,mid};
+                 return {maxRow,mid};
             }else if(mid > 0 && mat[maxRow][mid-1] > mat[maxRow][mid]){
                 high = mid - 1;
             }else low = mid + 1;
         }
+        
         return {-1,-1};
     }
 };
