@@ -32,8 +32,9 @@ public:
                         curr+= 1;
                         adj= 0;
                     }
+                    if(curr >= m) break;
                 }
-                if(curr >= m) break;
+                
             }
             if(curr < m) low = mid + 1;
             else {
