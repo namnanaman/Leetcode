@@ -8,13 +8,13 @@ public:
         for(int j=0;j<nums.size();j++)
         {
             if(!m[nums[j]]++)
-                s++;
-            while(k<s)
+                k--;
+            while(k<0)
             {
                 m[nums[i]]--;
                 
                 if(m[nums[i]] == 0)
-                    s--;
+                    k++;
                 i++;
             }
             res+=j-i+1;
