@@ -43,10 +43,7 @@ public:
             }
         }
         
-        auto *newHead = dummy->next;
-        auto *del = dummy;
-        delete dummy;
-        return newHead;
+       return dummy->next;
     }
 };
 // class Compare{
