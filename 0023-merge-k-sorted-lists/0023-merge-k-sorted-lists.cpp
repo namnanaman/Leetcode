@@ -11,17 +11,19 @@
 class cmp
 {
     public:
-    bool operator()(ListNode *a, ListNode *b)
-    {
-        return a->val > b->val;
-    }
+    
 };
 
 
 class Solution {
 public:
+    
+    bool operator()(ListNode *a, ListNode *b)
+    {
+        return a->val > b->val;
+    }
     ListNode* mergeKLists(vector<ListNode*>& lists) {
-        priority_queue<ListNode *, vector<ListNode *>, cmp> q;
+        priority_queue<ListNode *, vector<ListNode *>, Solution> q;
         ListNode *dummy = new ListNode(-1);
         ListNode* tail = NULL;
         for(int i=0; i<lists.size(); i++)
