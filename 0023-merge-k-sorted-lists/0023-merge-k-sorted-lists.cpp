@@ -23,7 +23,7 @@ public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         priority_queue<ListNode *, vector<ListNode *>, cmp> q;
         ListNode *dummy = new ListNode(-1);
-        auto *tail = dummy;
+        ListNode* tail = NULL;
         for(int i=0; i<lists.size(); i++)
         {
             if(lists[i])
@@ -34,7 +34,12 @@ public:
         while(!q.empty())
         {
             ListNode *temp = q.top();
-            tail->next = temp;
+            if(dummy->next == NULL)  {
+                dummy->next = temp;
+            }else{
+                tail->next = temp;
+            }
+            
             tail = temp;
             q.pop();
             if(temp->next)
