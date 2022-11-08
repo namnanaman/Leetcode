@@ -13,8 +13,8 @@ public:
     {
         vector<int> ans = {2000,500,200,100,50,20,10,5,2,1};
         vector<int> final;
-        while(N){
-            for(int i =0;i < ans.size();i++){
+        
+            for(int i =0;i < ans.size() && N > 0;i++){
                 if(ans[i] <= N){
                     int x = N/ans[i];
                     N-= (ans[i]*x);
@@ -24,7 +24,7 @@ public:
                     
                 }
             }
-        }
+        
         return final;
     }
 };
