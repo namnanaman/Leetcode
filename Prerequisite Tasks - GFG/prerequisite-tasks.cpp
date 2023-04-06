@@ -9,7 +9,7 @@ public:
 	       vector<int>  adj[N];
 	       
 	       for(auto it : prerequisites){
-	           adj[it.first].push_back(it.second);
+	           adj[it.second].push_back(it.first);
 	           
 	       }
 	       
